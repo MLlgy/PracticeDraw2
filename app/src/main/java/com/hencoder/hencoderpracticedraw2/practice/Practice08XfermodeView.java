@@ -39,9 +39,7 @@ public class Practice08XfermodeView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
         // 使用 paint.setXfermode() 设置不同的结合绘制效果
-
         // 别忘了用 canvas.saveLayer() 开启 off-screen buffer
         int saved = canvas.saveLayer(null, null, Canvas.ALL_SAVE_FLAG);
         canvas.drawBitmap(bitmap1, 0, 0, paint);
