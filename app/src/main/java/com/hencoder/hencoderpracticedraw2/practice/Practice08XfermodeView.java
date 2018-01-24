@@ -49,15 +49,22 @@ public class Practice08XfermodeView extends View {
         PorterDuffXfermode porterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC);
         paint.setXfermode(porterDuffXfermode);
         canvas.drawBitmap(bitmap2, 0, 0, paint);
+        paint.setXfermode(null);
 
         canvas.drawBitmap(bitmap1, bitmap1.getWidth() + 100, 0, paint);
         // 第二个：PorterDuff.Mode.DST_IN
+        PorterDuffXfermode porterDuffXfermode2 = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
+        paint.setXfermode(porterDuffXfermode2);
         canvas.drawBitmap(bitmap2, bitmap1.getWidth() + 100, 0, paint);
+        paint.setXfermode(null);
 
         canvas.drawBitmap(bitmap1, 0, bitmap1.getHeight() + 20, paint);
         // 第三个：PorterDuff.Mode.DST_OUT
+        PorterDuffXfermode porterDuffXfermode3 = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
+        paint.setXfermode(porterDuffXfermode3);
         canvas.drawBitmap(bitmap2, 0, bitmap1.getHeight() + 20, paint);
-
+        paint.setXfermode(null);
+        canvas.restore();
         // 用完之后使用 canvas.restore() 恢复 off-screen buffer
     }
 }
