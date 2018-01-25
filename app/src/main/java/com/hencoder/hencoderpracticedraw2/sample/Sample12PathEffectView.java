@@ -15,8 +15,10 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import static android.graphics.Paint.ANTI_ALIAS_FLAG;
+
 public class Sample12PathEffectView extends View {
-    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    Paint paint = new Paint(ANTI_ALIAS_FLAG);
     Path path = new Path();
     PathEffect cornerPathEffect = new CornerPathEffect(20);
     PathEffect discretePathEffect = new DiscretePathEffect(20, 5);
@@ -38,6 +40,7 @@ public class Sample12PathEffectView extends View {
     }
 
     {
+        setLayerType(ANTI_ALIAS_FLAG, null);
         paint.setStyle(Paint.Style.STROKE);
 
         path.moveTo(50, 100);
