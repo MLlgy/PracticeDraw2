@@ -33,6 +33,11 @@ public class Practice04BitmapShaderView extends View {
         // Bitmap: R.drawable.batman
     }
 
+    /**
+     * clamp
+     * @param canvas
+     */
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
